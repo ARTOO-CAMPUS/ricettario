@@ -77,6 +77,21 @@ module.exports = (function () {
 
 			});
 	}
+	var commentoRicetta = function (req, res) {
+		var id = req.params.id;
+		Ricette.findById(id)
+			.exec()
+			.then(function (ricetta) {
+				ricetta.commenti.push(req.body);
+				return ricetta.save();
+			})
+			.then(function (data) {
+				res.status(200).json(data);
+			})
+			.catch(function (err) {
+				res.status(500).json(err);
+			})
+	}
 
 	return {
 		getRicette: getRicette,
@@ -84,5 +99,6 @@ module.exports = (function () {
 		creaRicetta: creaRicetta,
 		cercaPerIngredienteOCategoria: cercaPerIngredienteOCategoria,
 		votoRicetta: votoRicetta,
+		commentoRicetta: commentoRicetta
 	}
 })();

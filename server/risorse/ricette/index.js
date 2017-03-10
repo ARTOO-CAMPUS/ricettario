@@ -11,5 +11,7 @@ router.post('/', Ricette.creaRicetta);
 router.get('/cerca', Ricette.cercaPerIngredienteOCategoria);
 //ROTTA PER CERCA PER INGREDIENTE
 router.put('/:id([0-9a-f]{24})', Ricette.votoRicetta);
+//ROTTA PER CERCA PER INGREDIENTE
+router.put('/commento/:id([0-9a-f]{24})', Ricette.commentoRicetta);
 
 module.exports = router;
