@@ -1,3 +1,5 @@
+var mongoose = require('mongoose');
+var Ricette = require('./ricette.model.js');
 module.exports = (function () {
 
 	var getRicette = function (req, res) {
