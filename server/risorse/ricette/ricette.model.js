@@ -8,7 +8,7 @@ var ricetteSchema = new Schema({
 	},
 	categoria: {
 		type: String,
-		enum: ['Antipasto', 'Primo', 'Secondo', 'Contorni', 'Dolce'],
+		enum: ['Antipasto', 'Primo', 'Secondo', 'Contorno"', 'Dolce'],
 		required: [true, 'Devi inserire la categoria'],
 	},
 	immagini: [{
