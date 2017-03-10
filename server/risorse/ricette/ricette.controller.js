@@ -60,10 +60,29 @@ module.exports = (function () {
 			});
 	}
 
+	var votoRicetta = function (req, res) {
+		var id = req.params.id;
+		var voto = req.body.voto;
+		Ricette.findById(id)
+			.exec()
+			.then(function (ricetta) {
+				ricetta.voto.nvoti += 1;
+				ricetta.voto.svoti += voto;
+				return ricetta.save();
+			})
+			.then(function (data) {
+				res.status(200).json(data);
+			})
+			.catch(function (err) {
+
+			});
+	}
+
 	return {
 		getRicette: getRicette,
 		dettaglioRicetta: dettaglioRicetta,
 		creaRicetta: creaRicetta,
-		cercaPerIngredienteOCategoria: cercaPerIngredienteOCategoria
+		cercaPerIngredienteOCategoria: cercaPerIngredienteOCategoria,
+		votoRicetta: votoRicetta,
 	}
 })();

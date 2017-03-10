@@ -9,5 +9,7 @@ router.get('/:id([0-9a-f]{24})', Ricette.dettaglioRicetta);
 router.post('/', Ricette.creaRicetta);
 //ROTTA PER CERCA PER INGREDIENTE
 router.get('/cerca', Ricette.cercaPerIngredienteOCategoria);
+//ROTTA PER CERCA PER INGREDIENTE
+router.put('/:id([0-9a-f]{24})', Ricette.votoRicetta);
 
 module.exports = router;
