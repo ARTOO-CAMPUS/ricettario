@@ -53,7 +53,13 @@ var ricetteSchema = new Schema({
 			type: Schema.Types.ObjectId,
 			ref: 'Utenti'
 		},
-		commento: String
+		commento: {
+			type: String,
+			lowercase: true
+		},
+		datacreazione: {
+			type: Date
+		}
 	}]
 });
 

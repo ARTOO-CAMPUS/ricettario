@@ -83,7 +83,9 @@ module.exports = (function () {
 		Ricette.findById(id)
 			.exec()
 			.then(function (ricetta) {
-				ricetta.commenti.push(req.body);
+				var commento = req.body;
+				commento.datacreazione = new Date();
+				ricetta.commenti.push(commento);
 				return ricetta.save();
 			})
 			.then(function (data) {
