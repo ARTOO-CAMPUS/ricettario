@@ -13,5 +13,7 @@ router.get('/cerca', Ricette.cercaPerIngredienteOCategoria);
 router.put('/:id([0-9a-f]{24})', Ricette.votoRicetta);
 //ROTTA PER CERCA PER INGREDIENTE
 router.put('/commento/:id([0-9a-f]{24})', Ricette.commentoRicetta);
+//ROTTA PER ELIMINARE LA RICETTA
+router.delete('/:id([0-9a-f]{24})', Ricette.eliminaRicetta);
 
 module.exports = router;

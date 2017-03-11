@@ -96,12 +96,23 @@ module.exports = (function () {
 			})
 	}
 
+	var eliminaRicetta = function (req, res) {
+		var id = req.params.id;
+		Ricette.findByIdAndRemove(id).then(function (data) {
+				res.status(200).json(data);
+			})
+			.catch(function (err) {
+				res.status(500).json(err);
+			});
+	}
+
 	return {
 		getRicette: getRicette,
 		dettaglioRicetta: dettaglioRicetta,
 		creaRicetta: creaRicetta,
 		cercaPerIngredienteOCategoria: cercaPerIngredienteOCategoria,
 		votoRicetta: votoRicetta,
-		commentoRicetta: commentoRicetta
+		commentoRicetta: commentoRicetta,
+		eliminaRicetta: eliminaRicetta
 	}
 })();
