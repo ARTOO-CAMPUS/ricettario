@@ -5,8 +5,8 @@ module.exports = (function () {
 	var getRicette = function (req, res) {
 		Ricette.find()
 			.populate({
-				path:'commenti.autore',
-				select:'username'
+				path: 'commenti.autore',
+				select: 'username'
 			})
 			.exec()
 			.then(function (data) {
@@ -20,7 +20,7 @@ module.exports = (function () {
 	var dettaglioRicetta = function (req, res) {
 		var id = req.params.id;
 		Ricette.findById(id)
-			.populate('autore')
+			.populate('commenti.autore')
 			.exec()
 			.then(function (data) {
 				res.status(200).json(data);
