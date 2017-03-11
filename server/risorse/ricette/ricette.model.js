@@ -5,6 +5,7 @@ var ricetteSchema = new Schema({
 	titolo: {
 		type: String,
 		unique: true,
+		required: [true, 'Titolo obbligatorio']
 	},
 	categoria: {
 		type: String,
