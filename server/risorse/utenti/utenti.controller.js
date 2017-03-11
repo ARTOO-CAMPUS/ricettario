@@ -40,9 +40,43 @@ module.exports = (function () {
 			});
 	}
 
+	var ricercaUtentiPerCategoria = function (req, res) {
+		var categoria = req.query.categoria;
+		Utenti.find({
+				"categoria": {
+					$in: [categoria]
+				}
+			})
+			.exec()
+			.then(function (data) {
+				res.status(200).json(data);
+			})
+			.catch(function (err) {
+				res.status(500).json(err);
+			});
+
+	}
+
+	var ricercaUtentiPerUsername = function (req, res) {
+		var username = req.query.username;
+		Utenti.find({
+				"username": username
+			})
+			.exec()
+			.then(function (data) {
+				res.status(200).json(data);
+			})
+			.catch(function (err) {
+				res.status(500).json(err);
+			});
+
+	}
+
 	return {
 		getUtenti: getUtenti,
 		creaUtente: creaUtente,
-		dettaglioUtente: dettaglioUtente
+		dettaglioUtente: dettaglioUtente,
+		ricercaUtentiPerCategoria: ricercaUtentiPerCategoria,
+		ricercaUtentiPerUsername: ricercaUtentiPerUsername
 	}
 })();
