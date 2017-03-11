@@ -4,7 +4,10 @@ module.exports = (function () {
 
 	var getRicette = function (req, res) {
 		Ricette.find()
-			.populate('autore')
+			.populate({
+				path:'commenti.autore',
+				select:'username'
+			})
 			.exec()
 			.then(function (data) {
 				res.status(200).json(data);
