@@ -50,6 +50,7 @@ module.exports = (function () {
 					}
 				]
 			})
+
 			.exec()
 			.then(function (data) {
 				res.status(200).json(data);

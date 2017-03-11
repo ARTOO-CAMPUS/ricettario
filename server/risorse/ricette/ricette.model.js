@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var ricetteSchema = new Schema({
 	titolo: {
 		type: String,
-		required: [true, 'Devi inserire il nome']
+		unique: true,
 	},
 	categoria: {
 		type: String,
