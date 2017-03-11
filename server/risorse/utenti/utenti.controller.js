@@ -26,8 +26,23 @@ module.exports = (function () {
 			});
 	}
 
+	var dettaglioUtente = function (req, res) {
+		var id = req.params.id;
+		Utenti.findById(id)
+			.populate('ricettePreferite')
+			.exec()
+			.then(function (data) {
+				res.status(200).json(data);
+			})
+			.catch(function (err) {
+				res.status(500).json(err);
+
+			});
+	}
+
 	return {
 		getUtenti: getUtenti,
 		creaUtente: creaUtente,
+		dettaglioUtente: dettaglioUtente
 	}
 })();

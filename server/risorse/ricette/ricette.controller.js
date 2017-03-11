@@ -4,6 +4,7 @@ module.exports = (function () {
 
 	var getRicette = function (req, res) {
 		Ricette.find()
+			.populate('autore')
 			.exec()
 			.then(function (data) {
 				res.status(200).json(data);
@@ -16,6 +17,7 @@ module.exports = (function () {
 	var dettaglioRicetta = function (req, res) {
 		var id = req.params.id;
 		Ricette.findById(id)
+			.populate('autore')
 			.exec()
 			.then(function (data) {
 				res.status(200).json(data);
