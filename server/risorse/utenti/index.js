@@ -11,6 +11,14 @@ router.get('/:id([0-9a-f]{24})', Utenti.dettaglioUtente);
 router.get('/categoria', Utenti.ricercaUtentiPerCategoria);
 //ROTTA DI RICERCA PER USERNAME
 router.get('/username', Utenti.ricercaUtentiPerUsername);
+//AGGIUNGI CATEGORIA
+router.put('/categoria/:id([0-9a-f]{24})', Utenti.aggiungiCategoria);
+//ELIMINA CATEGORIA
+router.put('/eliminacategoria/:id([0-9a-f]{24})', Utenti.eliminaCategoria);
+//AGGIUNGI RICETTA
+router.put('/ricetta/:id([0-9a-f]{24})', Utenti.aggiungiRicetta);
+//ELIMINA RICETTA
+router.put('/eliminaricetta/:id([0-9a-f]{24})', Utenti.eliminaRicetta);
 
 
 module.exports = router;

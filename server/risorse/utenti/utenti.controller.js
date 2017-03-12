@@ -72,11 +72,80 @@ module.exports = (function () {
 
 	}
 
+	var aggiungiCategoria = function (req, res) {
+		var id = req.params.id;
+		var categoria = req.body.categoria;
+		Utenti.findById(id)
+			.exec()
+			.then(function (data) {
+				data.categoria.push(categoria);
+				return data.save();
+			})
+			.then(function (data) {
+				res.status(200).json(data);
+			})
+			.catch(function (err) {
+				res.status(500).json(err);
+			})
+	}
+	var eliminaCategoria = function (req, res) {
+		var id = req.params.id;
+		var categoria = req.body.categoria;
+		Utenti.findById(id)
+			.exec()
+			.then(function (data) {
+				var indice = data.categoria.indexOf(categoria);
+				data.categoria.splice(indice, 1);
+				return data.save();
+			})
+			.then(function (data) {
+				res.status(200).json(data);
+			})
+			.catch(function (err) {
+				res.status(500).json(err);
+			})
+	}
+
+	var aggiungiRicetta = function (req, res) {
+		Utenti.findById(req.params.id)
+			.exec()
+			.then(function (data) {
+				data.ricettePreferite.push(req.body.ricetta);
+				return data.save();
+			})
+			.then(function (data) {
+				res.status(200).json(data);
+			})
+			.catch(function (err) {
+				res.status(500).json(err);
+			});
+	}
+	var eliminaRicetta = function (req, res) {
+		var ricetta = req.body.ricetta;
+		Utenti.findById(req.params.id)
+			.exec()
+			.then(function (data) {
+				var indice = data.ricettePreferite.indexOf(ricetta);
+				data.ricettePreferite.splice(indice, 1);
+				return data.save();
+			})
+			.then(function (data) {
+				res.status(200).json(data);
+			})
+			.catch(function (err) {
+				res.status(500).json(err);
+			});
+	}
+
 	return {
 		getUtenti: getUtenti,
 		creaUtente: creaUtente,
 		dettaglioUtente: dettaglioUtente,
 		ricercaUtentiPerCategoria: ricercaUtentiPerCategoria,
-		ricercaUtentiPerUsername: ricercaUtentiPerUsername
+		ricercaUtentiPerUsername: ricercaUtentiPerUsername,
+		aggiungiCategoria: aggiungiCategoria,
+		eliminaCategoria: eliminaCategoria,
+		aggiungiRicetta: aggiungiRicetta,
+		eliminaRicetta: eliminaRicetta
 	}
 })();
