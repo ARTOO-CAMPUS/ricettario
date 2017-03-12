@@ -1,0 +1,343 @@
+{
+	"variables": [],
+	"info": {
+		"name": "ricette",
+		"_postman_id": "c12ecbb1-9001-8c7f-c7c1-982e95525471",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ricette",
+			"description": "",
+			"item": [
+				{
+					"name": "TUTTE LE RICETTE DEL MONDO",
+					"request": {
+						"url": "http://localhost:3000/ricette",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Batman\",\n  \"avatar\": \"https://mi-od-live-s.legocdn.com/r/www/r/catalogs/-/media/catalogs/characters/dc/mugshots/mugshot%202016/76055_1to1_mf_mugshot_batman_01.png?l.r2=1858676167\",\n  \"healt\": 100,\n  \"weapons\": [],\n  \"hasPowers\": false\n  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DETTAGLIO RICETTA",
+					"request": {
+						"url": "http://localhost:3000/ricette/58c3c93aa2ee3a41a4a81003",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"voto\":5\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "CREAZIONE RICETTA",
+					"request": {
+						"url": "http://localhost:3000/ricette/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"titolo\":\"Torta\",\n  \"categoria\":\"Dolce\",\n  \"immagini\":[\"http://static.pourfemme.it/pfricette/fotogallery/845X0/22905/torta-di-compleanno-alle-fragole.jpg\"],\n  \"ingredienti\":[\"uova\",\"farina\",\"latte\",\"panna\"],\n  \"difficolta\":\"Facile\",\n  \"preparazione\":\"Sbatti le uova e monta la panna\",\n  \"tempodicottura\":45,\n  \"temperaturadicottura\":180,\n  \"voto\": {\n  \t\"nvoti\":0,\n  \t\"svoti\":1\n  },\n  \"commenti\":[{\n  \t\"autore\":\"58c260fe4a84f038cc9d441b\",\n  \t\"commento\":\"Questa ricetta è favolosa\"\n  },\n  {\n  \t\"autore\":\"58c260fe4a84f038cc9d441b\",\n  \t\"commento\":\"Questa ricetta fa schifo\"\n  }]\n  \n  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "CERCA PER INGREDIENTE",
+					"request": {
+						"url": "http://localhost:3000/ricette/cerca/?ingrediente=uova",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Batman\",\n  \"avatar\": \"https://mi-od-live-s.legocdn.com/r/www/r/catalogs/-/media/catalogs/characters/dc/mugshots/mugshot%202016/76055_1to1_mf_mugshot_batman_01.png?l.r2=1858676167\",\n  \"healt\": 100,\n  \"weapons\": [],\n  \"hasPowers\": false\n  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "VOTO RICETTA",
+					"request": {
+						"url": "http://localhost:3000/ricette/58c2d91cb84d7339b4d3055c",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"voto\":5\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "COMMENTO RICETTA",
+					"request": {
+						"url": "http://localhost:3000/ricette/commento/58c3a4eb1b842250941f6c87",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"autore\":\"58c3c02e8908012590aec095\",\t\n \"commento\":\"torta piu' buona del mondo\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINA RICETTA",
+					"request": {
+						"url": "http://localhost:3000/ricette/58c3a4eb1b842250941f6c87",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"voto\":5\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "utenti",
+			"description": "",
+			"item": [
+				{
+					"name": "CREAZIONE UTENTE",
+					"request": {
+						"url": "http://localhost:3000/utenti/",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"username\":\"Paolo\",\n \"password\":\"123456\",\n \"categoria\":[\"Secondo\",\"Dolce\"],\n \"ricettePreferite\":[\"58c3c93aa2ee3a41a4a81003\"]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "TUTTI GLI UTENTI",
+					"request": {
+						"url": "http://localhost:3000/utenti/",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"username\":\"Paolo\",\n \"password\":\"123456\",\n \"categoria\":[\"Secondo\",\"Dolce\"],\n \"ricettePreferite\":[\"58c3bfe88908012590aec092\"]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "DETTAGLIO UTENTE",
+					"request": {
+						"url": "http://localhost:3000/utenti/58c3c02e8908012590aec095",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"username\":\"Paolo\",\n \"password\":\"123456\",\n \"categoria\":[\"Secondo\",\"Dolce\"],\n \"ricettePreferite\":[\"58c3bfe88908012590aec092\"]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "RICERCA PER CATEGORIA",
+					"request": {
+						"url": "http://localhost:3000/utenti/categoria/?categoria=Dolce",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"username\":\"Paolo\",\n \"password\":\"123456\",\n \"categoria\":[\"Secondo\",\"Dolce\"],\n \"ricettePreferite\":[\"58c3bfe88908012590aec092\"]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "RICERCA PER USERNAME",
+					"request": {
+						"url": "http://localhost:3000/utenti/username/?username=Paolo",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"username\":\"Paolo\",\n \"password\":\"123456\",\n \"categoria\":[\"Secondo\",\"Dolce\"],\n \"ricettePreferite\":[\"58c3bfe88908012590aec092\"]\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AGGIUNGI CATEGORIA",
+					"request": {
+						"url": "http://localhost:3000/utenti/categoria/58c3c9b5a2ee3a41a4a81006",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"categoria\":\"Antipasto\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINA CATEGORIA",
+					"request": {
+						"url": "http://localhost:3000/utenti/categoria/58c3c9b5a2ee3a41a4a81006",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"categoria\":\"Antipasto\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "AGGIUNGI RICETTA",
+					"request": {
+						"url": "http://localhost:3000/utenti/ricetta/58c3c9b5a2ee3a41a4a81006",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"ricetta\":\"58c3c93aa2ee3a41a4a81003\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "ELIMINA RICETTA",
+					"request": {
+						"url": "http://localhost:3000/utenti/eliminaricetta/58c3c9b5a2ee3a41a4a81006",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n \"ricetta\":\"58c3c93aa2ee3a41a4a81003\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
