@@ -10,7 +10,7 @@
 </head>
 
 <body ng-app="app">
-	<h1>Ciao a tutti</h1>
+	<md-content ui-view></md-content>
 </body>
 
 <script src="nm/angular/angular.min.js"></script>
@@ -18,7 +18,9 @@
 <script src="nm/angular-aria/angular-aria.min.js"></script>
 <script src="nm/angular-material/angular-material.min.js"></script>
 <script src="nm/angular-ui-router/release/angular-ui-router.min.js"></script>
-<script src="js/app.js"></script>
+<script src="app/app.js"></script>
+<script src="app/rotte/app.routes.js"></script>
+<script src="app/utenti/login/login.controller.js"></script>
 
 <script>
 	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
