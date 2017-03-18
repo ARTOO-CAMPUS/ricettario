@@ -15,8 +15,9 @@ module.exports = function (app, express) {
 	});
 
 	app.use("/", express.static(path.join(__dirname, "..", "..", "client")));
-	app.use("js", express.static(path.join(__dirname, "..", "..", "client", "js")));
-	app.use("css", express.static(path.join(__dirname, "..", "..", "client", "css")));
+	app.use("/js", express.static(path.join(__dirname, "..", "..", "client", "js")));
+	app.use("/css", express.static(path.join(__dirname, "..", "..", "client", "css")));
+	app.use("/nm", express.static(path.join(__dirname, "..", "..", "node_modules")));
 
 	//ROTTA PER GLI UTENTI
 	app.use('/utenti', require("./../risorse/utenti"));
