@@ -1,21 +1,9 @@
 <ng-include src="'app/UI/nav.template.html'"></ng-include>
-<div layout="column" layout-fill="" layout-align="top center">
+<md-content layout="column" layout-fill layout-align="top center">
 	<ng-include src="'app/UI/sidenav.template.html'"></ng-include>
-	<p>
-		The left sidenav will 'lock open' on a medium (>=960px wide) device.
-	</p>
-	<p>
-		The right sidenav will focus on a specific child element.
-	</p>
-
 	<div>
 		<md-button ng-click="open()" class="md-primary">
 			Toggle left
 		</md-button>
 	</div>
-
-
-</div>
-
-<div flex=""></div>
 </md-content>
