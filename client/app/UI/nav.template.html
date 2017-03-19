@@ -1,7 +1,7 @@
-<md-toolbar class="md-hue-2  myCustomClass" md-theme="docs-dark">
+<md-toolbar class="md-hue-2  myCustomClass" md-theme="docs-dark" layout-padding>
 	<div class="md-toolbar-tools" layout="row" layout-align="start center" layout-padding>
-		<md-button ng-click="open()" class="md-fab" aria-label="Eat cake">
-			<md-icon><i class="material-icons">cake</i></md-icon>
+		<md-button ng-click="open()" md-no-ink aria-label="Eat cake">
+			<md-icon><i class="material-icons">menu</i></md-icon>
 		</md-button>
 		<span flex="5"></span>
 		<md-input-container>
@@ -14,5 +14,9 @@
 			<md-option value="secondo">Secondo</md-option>
 			<md-option value="contorno">Contorno</md-option>
 		</md-select>
+		<div flex></div>
+		<md-button ng-click="open()" class="md-fab" md-no-ink aria-label="user">
+			<md-icon><i class="material-icons">person</i></md-icon>
+		</md-button>
 	</div>
 </md-toolbar>
