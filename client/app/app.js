@@ -16,4 +16,9 @@ angular.module('app', [
 			.primaryPalette('pink')
 			.dark();
 
-	});
+	}).controller('AppCtrl', function ($scope, $state) {
+		$scope.logout = function () {
+			localStorage.clear();
+			$state.go('login');
+		}
+	})
