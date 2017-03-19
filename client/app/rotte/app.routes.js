@@ -1,12 +1,30 @@
 angular.module('app').config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
 
-	$urlRouterProvider.when('', '/')
-	$urlRouterProvider.otherwise('/');
+	var Aut = function ($rootScope, $state, $timeout) {
+		console.log($rootScope.utente);
+		$state.go('login');
+		if (!$rootScope.utente) {
+			$timeout(function () {
+				$state.go('login')
+			}, 0);
+		}
+	};
+
+	$urlRouterProvider.when('', '/home')
+	$urlRouterProvider.otherwise('/home');
 
 	$stateProvider
-		.state('/login', {
+		.state('login', {
 			url: '/login',
 			templateUrl: 'app/utenti/login/login.template.html',
 			controller: 'LoginCtrl'
-		});
+		})
+		.state('home', {
+			url: '/home',
+			template: 'home',
+			controller: 'LoginCtrl',
+			resolve: {
+				aut: Aut
+			}
+		})
 });
