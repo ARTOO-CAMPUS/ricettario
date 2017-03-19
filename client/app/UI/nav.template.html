@@ -1,0 +1,18 @@
+<md-toolbar class="md-hue-2  myCustomClass" md-theme="docs-dark">
+	<div class="md-toolbar-tools" layout="row" layout-align="start center" layout-padding>
+		<md-button ng-click="open()" class="md-fab" aria-label="Eat cake">
+			<md-icon><i class="material-icons">cake</i></md-icon>
+		</md-button>
+		<span flex="5"></span>
+		<md-input-container>
+			<md-icon><i class="material-icons">search</i></md-icon>
+			<input ng-model="cerca" type="text" placeholder="Cerca ingrediente">
+		</md-input-container>
+		<md-select ng-model="categoria" placeholder="Categoria" class="md-no-underline">
+			<md-option value="dolce">Dolce</md-option>
+			<md-option value="primo">Primo</md-option>
+			<md-option value="secondo">Secondo</md-option>
+			<md-option value="contorno">Contorno</md-option>
+		</md-select>
+	</div>
+</md-toolbar>

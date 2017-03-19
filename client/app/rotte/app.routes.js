@@ -21,8 +21,8 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
 		})
 		.state('home', {
 			url: '/home',
-			template: 'home',
-			controller: 'LoginCtrl',
+			templateUrl: 'app/ricette/home/home.template.html',
+			controller: 'HomeCtrl',
 			resolve: {
 				aut: Aut
 			}

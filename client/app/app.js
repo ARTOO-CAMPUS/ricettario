@@ -12,4 +12,8 @@ angular.module('app', [
 			.accentPalette('amber')
 			.warnPalette('red')
 			.backgroundPalette('blue-grey');
+		$mdThemingProvider.theme('docs-dark', 'default')
+			.primaryPalette('pink')
+			.dark();
+
 	});
