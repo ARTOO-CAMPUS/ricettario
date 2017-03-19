@@ -1,1 +1,25 @@
-<h1>Login</h1>
+<div layout="column" flex layout-fill layout-align="center stretch">
+	<div md-colors="{background: 'default-accent'}" flex="50"></div>
+	<div layout="column" flex layout-fill layout-align="center center">
+		<md-whiteframe class="login md-whiteframe-z2">
+			<md-toolbar>
+				<h5 class="md-toolbar-tools">LOGIN</h2>
+			</md-toolbar>
+			<form name="loginform" novalidate ng-submit="login()" role="form" novalidate autocomplete="off">
+				<md-content class="md-padding" layout="column" layout-align="space-between stretch">
+					<md-input-container>
+						<label>Username</label>
+						<input ng-model="user.username" ng-required="true">
+						<div ng-messages="error">{{error}}</div>
+					</md-input-container>
+					<md-input-container>
+						<label>Password</label>
+						<input type="password" ng-model="user.password" ng-required="true">
+					</md-input-container>
+					<md-button ng-disabled="loginform.$invalid" layout-padding type="submit" aria-label="Login" class="md-raised md-primary">
+						Login </md-button>
+				</md-content>
+			</form>
+		</md-whiteframe>
+	</div>
+</div>

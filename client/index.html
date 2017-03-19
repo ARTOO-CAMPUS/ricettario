@@ -6,12 +6,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<base href="/">
-	<title>Document</title>
+	<title>Ricettario</title>
 	<link rel="stylesheet" href="nm/angular-material/angular-material.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/login.css" rel="stylesheet">
+
 </head>
 
 <body ng-app="app">
-	<md-content ui-view md-theme="my-theme" layout-fill></md-content>
+	<md-content ui-view md-theme="default" flex layout-fill></md-content>
 </body>
 
 <script src="nm/angular/angular.min.js"></script>
@@ -22,6 +26,7 @@
 <script src="app/app.js"></script>
 <script src="app/rotte/app.routes.js"></script>
 <script src="app/utenti/login/login.controller.js"></script>
+<script src="app/utenti/Utenti.service.js"></script>
 
 <script>
 	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +

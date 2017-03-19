@@ -1,11 +1,13 @@
 angular.module('app', [
 		'ui.router',
 		'ngMaterial'
-	]).run(function () {
-		console.log("App is run");
+	]).run(function ($rootScope) {
+		if (localStorage.utente) {
+			$rootScope.utente = angular.fromJson(localStorage.utente);
+		}
 	})
 	.config(function ($mdThemingProvider) {
-		$mdThemingProvider.theme('my-theme')
+		$mdThemingProvider.theme('default')
 			.primaryPalette('indigo')
 			.accentPalette('amber')
 			.warnPalette('red')
