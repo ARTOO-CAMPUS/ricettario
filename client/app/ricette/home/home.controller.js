@@ -9,4 +9,7 @@ angular.module('app').controller('HomeCtrl', function ($scope, $timeout, $mdSide
 	};
 
 
+	$scope.preferite = ["Torta alle mele", "Torta alle arance"];
+
+
 });
