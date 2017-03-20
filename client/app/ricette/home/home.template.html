@@ -34,7 +34,7 @@
 
 		<!--inizio seconda sezione-->
 		<div layout="row" layout-wrap layout-align="start start">
-			<md-card flex="20" ng-repeat="ricetta in ricette" class="ricette">
+			<md-card flex="20" ng-repeat="ricetta in ricette" class="ricette" ui-sref="dettaglio({id:ricetta._id})">
 				<img src="http://static.pourfemme.it/pfricette/fotogallery/845X0/22905/torta-di-compleanno-alle-fragole.jpg" class="md-card-image"
 				    alt="Washed Out">
 				<md-card-content>

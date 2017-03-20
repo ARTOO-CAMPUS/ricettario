@@ -1,4 +1,4 @@
-angular.module('app').controller('HomeCtrl', function ($scope, $timeout, $mdSidenav, $log, RicetteSrv) {
+angular.module('app').controller('HomeCtrl', function ($scope, $timeout, $mdSidenav, $log, RicetteSrv, $state) {
 
 	RicetteSrv.getRicette()
 		.then(function (data) {
@@ -23,8 +23,6 @@ angular.module('app').controller('HomeCtrl', function ($scope, $timeout, $mdSide
 		.catch(function (err) {
 			console.log(err);
 		});
-
-
 
 
 });

@@ -14,12 +14,37 @@ angular.module('app').service('RicetteSrv', function ($http, $location) {
 				return err;
 			});
 	}
+	var dettaglioRicetta = function (id) {
+		return $http({
+				method: 'GET',
+				url: baseUrl + '/ricette/' + id,
+			})
+			.then(function (res) {
+				return res.data;
+			}, function (err) {})
+			.catch(function (err) {
+				return err;
+			});
+	}
+	var createRicetta = function (nuova) {
+		return $http({
+				method: 'POST',
+				url: baseUrl + '/ricette',
+				data: nuova
+			})
+			.then(function (res) {
+				return res.data;
+			}, function (err) {})
+			.catch(function (err) {
+				return err;
+			});
+	}
 
 
 	return {
 		getRicette: getRicette,
-		// dettaglioRicetta: dettaglioRicetta,
-		// createRicetta: createRicetta,
+		dettaglioRicetta: dettaglioRicetta,
+		createRicetta: createRicetta,
 
 	}
 });

@@ -27,4 +27,12 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
 				aut: Aut
 			}
 		})
+		.state('dettaglio', {
+			url: '/dettaglio/:id',
+			templateUrl: 'app/ricette/dettaglio/dettaglio.template.html',
+			controller: 'DettaglioCtrl',
+			resolve: {
+				aut: Aut
+			}
+		})
 });
