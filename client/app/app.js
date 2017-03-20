@@ -21,4 +21,19 @@ angular.module('app', [
 			localStorage.clear();
 			$state.go('login');
 		}
+
+		$scope.close = function () {
+			$mdSidenav('left').close()
+				.then(function () {});
+		};
+		$scope.open = function () {
+			$mdSidenav('left').toggle()
+				.then(function () {});
+		};
+		$scope.toggle = function () {
+			$scope.opened = !$scope.opened;
+		};
+
+
+		$scope.preferite = ["Torta alle mele", "Torta alle arance"];
 	})
