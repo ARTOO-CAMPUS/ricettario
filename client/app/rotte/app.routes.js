@@ -43,4 +43,12 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
 				aut: Aut
 			}
 		})
+		.state('ricerca', {
+			url: '/ricerca',
+			templateUrl: 'app/ricette/ricerca/ricerca.template.html',
+			controller: 'RicercaCtrl',
+			resolve: {
+				aut: Aut
+			}
+		})
 });

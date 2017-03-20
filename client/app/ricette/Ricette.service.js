@@ -40,11 +40,24 @@ angular.module('app').service('RicetteSrv', function ($http, $location) {
 			});
 	}
 
+	var ricerca = function (ingrediente, categoria) {
+		return $http({
+				method: 'GET',
+				url: baseUrl + '/ricette/cerca/?ingrediente=' + ingrediente + '&categoria=' + categoria,
+			})
+			.then(function (res) {
+				return res.data;
+			}, function (err) {})
+			.catch(function (err) {
+				return err;
+			});
+	}
 
 	return {
 		getRicette: getRicette,
 		dettaglioRicetta: dettaglioRicetta,
 		createRicetta: createRicetta,
+		ricerca: ricerca
 
 	}
 });

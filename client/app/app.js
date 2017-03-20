@@ -16,7 +16,7 @@ angular.module('app', [
 			.primaryPalette('pink')
 			.dark();
 
-	}).controller('AppCtrl', function ($rootScope, $scope, $state, UtentiSrv) {
+	}).controller('AppCtrl', function ($rootScope, $scope, $state, UtentiSrv, RicetteSrv) {
 		$scope.logout = function () {
 			$rootScope.utente = false;
 			localStorage.clear();
@@ -50,6 +50,20 @@ angular.module('app', [
 					console.log(err);
 				});
 
+		}
+
+
+		// $scope.$watch('ricerca', function (ricerca) {
+		// 	console.log(ricerca)
+		// 	$rootScope.ricerca = ricerca;
+		// 	$state.go('ricerca');
+		// })
+		$scope.cerca = function () {
+			RicetteSrv.ricerca($scope.ricerca, $scope.categoria).then(function (data) {
+					$rootScope.risultati = data;
+					$state.go('ricerca');
+				})
+				.catch();
 		}
 
 	})
