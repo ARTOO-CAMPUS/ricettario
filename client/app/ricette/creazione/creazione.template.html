@@ -1,39 +1,49 @@
 <md-content layout="row" layout-nowrap>
 	<ng-include src="'app/UI/sidenav.template.html'"></ng-include>
 	<md-content layout="column" layout-wrap layout-fill layout-padding>
-		<form ng-submit="crea()" novalidate role="form" name="creaform">
+		<form ng-submit="creazione()" novalidate role="form" name="creaform">
 			<div layout="column" layout-wrap layout-align="center start" flex-offset="40">
 				<md-input-container>
 					<label>Titolo</label>
 					<input ng-model="nuovaRicetta.titolo">
 				</md-input-container>
 				<md-input-container>
-					<label>Categoria</label>
-					<input ng-model="nuovaRicetta.categoria">
+					<md-select ng-model="nuovaRicetta.categoria" placeholder="Categoria" class="md-no-underline">
+						<md-option value="Antipasto">Antipasto</md-option>
+						<md-option value="Primo">Primo</md-option>
+						<md-option value="Secondo">Secondo</md-option>
+						<md-option value="Contorni">Contorni</md-option>
+						<md-option value="Dolce">Dolce</md-option>
+					</md-select>
 				</md-input-container>
 				<md-input-container>
-					<label>Difficoltà</label>
-					<input ng-model="nuovaRicetta.difficolta">
+					<md-select ng-model="nuovaRicetta.difficolta" placeholder="Difficoltà" class="md-no-underline">
+						<md-option value="Facile">Facile</md-option>
+						<md-option value="Medio">Medio</md-option>
+						<md-option value="Difficile">Difficile</md-option>
+					</md-select>
 				</md-input-container>
 				<md-input-container>
 					<label>Preparazione</label>
-					<input ng-model="nuovaRicetta.preparazione">
+					<textarea ng-model="nuovaRicetta.preparazione" rows="5" md-maxlength="1000"></textarea>
 				</md-input-container>
 				<md-input-container>
 					<label>Temperatura</label>
-					<input ng-model="nuovaRicetta.temperatura">
+					<input type="number" min="0" max="1000" ng-model="nuovaRicetta.temperaturadicottura">
 				</md-input-container>
 				<md-input-container>
 					<label>Tempodicottura</label>
-					<input ng-model="nuovaRicetta.tempodicottura">
+					<input type="number" min="0" max="240" ng-model="nuovaRicetta.tempodicottura">
 				</md-input-container>
+
+				<md-chips ng-model="nuovaRicetta.ingredienti" name="ingredienti" md-removable="true" placeholder="Inserisci gli ingredienti">
+					<md-chip-template>
+						<strong>{{$chip}}</strong>
+					</md-chip-template>
+				</md-chips>
 				<md-input-container>
-					<label>Ingredienti</label>
-					<input ng-model="nuovaRicetta.ingredienti">
-				</md-input-container>
-				<md-input-container>
-					<label>Immagini</label>
-					<input ng-model="nuovaRicetta.immagini">
+					<label>Immagine</label>
+					<input ng-model="immagine">
 				</md-input-container>
 				<md-button class="md-raised md-primary" type="submit">Crea</md-button>
 			</div>
