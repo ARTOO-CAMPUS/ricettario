@@ -16,11 +16,14 @@
 </head>
 
 <body ng-app="app" ng-controller="AppCtrl" layout="column">
+	<!--navbar-->
 	<div ng-show="utente" ng-include="'app/UI/nav.template.html'"></div>
+	<!--contenuto-->
 	<md-content flex layout="column">
 		<md-content ui-view md-theme="default" layout-fill></md-content>
 	</md-content>
-	<md-button class="md-fab md-fab-bottom-right" aria-label="add ricetta">
+	<!--fab aggiunta-->
+	<md-button ng-show="utente" class="md-fab md-fab-bottom-right" aria-label="add ricetta">
 		<md-tooltip md-direction="top" md-visible="tooltipVisible">Nuova ricetta</md-tooltip>
 		<md-icon><i class="material-icons">cake</i></md-icon>
 	</md-button>

@@ -22,14 +22,14 @@ angular.module('app', [
 			$state.go('login');
 		}
 
-		$scope.close = function () {
-			$mdSidenav('left').close()
-				.then(function () {});
-		};
-		$scope.open = function () {
-			$mdSidenav('left').toggle()
-				.then(function () {});
-		};
+		// $scope.close = function () {
+		// 	$mdSidenav('left').close()
+		// 		.then(function () {});
+		// };
+		// $scope.open = function () {
+		// 	$mdSidenav('left').toggle()
+		// 		.then(function () {});
+		// };
 		$scope.toggle = function () {
 			$scope.opened = !$scope.opened;
 		};
