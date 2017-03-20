@@ -23,7 +23,7 @@
 		<md-content ui-view md-theme="default" layout-fill></md-content>
 	</md-content>
 	<!--fab aggiunta-->
-	<md-button ng-show="utente" class="md-fab md-fab-bottom-right" aria-label="add ricetta">
+	<md-button ng-show="utente" class="md-fab md-fab-bottom-right" aria-label="add ricetta" ui-sref="creazione">
 		<md-tooltip md-direction="top" md-visible="tooltipVisible">Nuova ricetta</md-tooltip>
 		<md-icon><i class="material-icons">cake</i></md-icon>
 	</md-button>
@@ -43,6 +43,7 @@
 <script src="app/ricette/home/home.controller.js"></script>
 <script src="app/ricette/Ricette.service.js"></script>
 <script src="app/ricette/dettaglio/dettaglio.controller.js"></script>
+<script src="app/ricette/creazione/creazione.controller.js"></script>
 
 <script>
 	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
