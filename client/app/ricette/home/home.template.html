@@ -10,7 +10,7 @@
 		</div>
 		<!--carosello-->
 		<md-content layout="row">
-			<md-card flex flex-gt-md="30" ng-repeat="a in [1,2,3,4,5,6,7,8]" class="ricette">
+			<md-card flex flex-gt-md="30" ng-repeat="a in [2,4,5]" class="ricette">
 				<img src="http://static.pourfemme.it/pfricette/fotogallery/845X0/22905/torta-di-compleanno-alle-fragole.jpg" class="md-card-image"
 				    alt="Washed Out">
 				<md-card-content>
@@ -33,20 +33,19 @@
 		<!--fine carosello-->
 
 		<!--inizio seconda sezione-->
-		<div layout="row" layout-wrap layout-align="space-around start">
-			<md-card flex="20" ng-repeat="a in [1,2,3,4,5,6,7,8]" class="ricette">
+		<div layout="row" layout-wrap layout-align="start start">
+			<md-card flex="20" ng-repeat="ricetta in ricette" class="ricette">
 				<img src="http://static.pourfemme.it/pfricette/fotogallery/845X0/22905/torta-di-compleanno-alle-fragole.jpg" class="md-card-image"
 				    alt="Washed Out">
 				<md-card-content>
-					<h2 class="md-title">Paracosm</h2>
+					<h2 class="md-title">{{ricetta.titolo}}</h2>
 					<p>
-						The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest
-						Greene's musical language: feel it. It's a simple request, as well...
+						{{ricetta.preparazione}}
 					</p>
 				</md-card-content>
 				<div class="md-actions" layout="row" layout-align="end center">
 					<md-button>
-						<md-icon md-colors="{color:'amber'}" ng-repeat="s in [1,2,3,4,5]"><i class="material-icons">star</i></md-icon>
+						<md-icon md-colors="{color:'amber'}" ng-repeat="s in ricetta.m"><i class="material-icons">star</i></md-icon>
 					</md-button>
 					<md-button>
 						<md-icon class="md-warn"><i class="material-icons">favorite</i></md-icon>
