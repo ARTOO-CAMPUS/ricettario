@@ -58,7 +58,8 @@ angular.module('app', [
 		// 	$rootScope.ricerca = ricerca;
 		// 	$state.go('ricerca');
 		// })
-		$scope.cerca = function () {
+		$scope.cerca = function (cat) {
+			$scope.categoria = cat || $scope.categoria;
 			RicetteSrv.ricerca($scope.ricerca, $scope.categoria).then(function (data) {
 					$rootScope.risultati = data;
 					$state.go('ricerca');

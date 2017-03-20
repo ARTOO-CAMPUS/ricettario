@@ -63,10 +63,26 @@ angular.module('app').service('UtentiSrv', function ($location, $http) {
 				return err;
 			});
 	}
+	var creaUtente = function (nuovo) {
+		return $http({
+				method: 'POST',
+				url: baseUrl + '/utenti/',
+				data: nuovo
+			})
+			.then(function (res) {
+				return res.data;
+			}, function (err) {
+				return err;
+			})
+			.catch(function (err) {
+				return err;
+			});
+	}
 	return {
 		getUtente: getUtente,
 		aggiungiRicettaPreferita: aggiungiRicettaPreferita,
 		eliminaRicettaPreferita: eliminaRicettaPreferita,
-		dettaglioUtente: dettaglioUtente
+		dettaglioUtente: dettaglioUtente,
+		creaUtente: creaUtente
 	}
 })

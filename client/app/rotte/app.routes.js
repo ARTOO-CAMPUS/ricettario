@@ -59,4 +59,9 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
 				aut: Aut
 			}
 		})
+		.state('registrazione', {
+			url: '/registrazione',
+			templateUrl: 'app/utenti/registrazione/registrazione.template.html',
+			controller: 'RegistrazioneCtrl',
+		})
 });

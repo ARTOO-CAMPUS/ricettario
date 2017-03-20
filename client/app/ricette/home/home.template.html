@@ -5,16 +5,19 @@
     <md-content layout="column" layout-wrap>
         <!--categorie-->
         <div layout="row" layout-wrap layout-align="space-around start" layout-padding>
-            <img ng-repeat="i in [1,2,3,4]" src="http://static.donnamoderna.com/wp-content/uploads/2002/12/dolce-di-rabarbaro-mele-e-lamponi-ricetta-725x545.jpg" width="200px">
+            <img ng-click="cerca('Dolce')" ng-repeat="i in [1,2,3,4]" src="http://static.donnamoderna.com/wp-content/uploads/2002/12/dolce-di-rabarbaro-mele-e-lamponi-ricetta-725x545.jpg"
+                width="200px">
         </div>
         <!--carosello-->
         <md-content layout="row">
             <md-card flex flex-gt-md="30" ng-repeat="a in [2,4,5,6,7,8]" class="ricette">
-                <img src="http://static.pourfemme.it/pfricette/fotogallery/845X0/22905/torta-di-compleanno-alle-fragole.jpg" class="md-card-image" alt="Washed Out">
+                <img src="http://static.pourfemme.it/pfricette/fotogallery/845X0/22905/torta-di-compleanno-alle-fragole.jpg" class="md-card-image"
+                    alt="Washed Out">
                 <md-card-content>
                     <h2 class="md-title">Paracosm</h2>
                     <p>
-                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest Greene's musical language: feel it. It's a simple request, as well...
+                        The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest
+                        Greene's musical language: feel it. It's a simple request, as well...
                     </p>
                 </md-card-content>
                 <div class="md-actions" layout="row" layout-align="end center">

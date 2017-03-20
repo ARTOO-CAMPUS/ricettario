@@ -3,22 +3,20 @@
 	<div layout="column" flex layout-fill layout-align="center center">
 		<md-whiteframe class="login md-whiteframe-10dp">
 			<md-toolbar>
-				<h5 class="md-toolbar-tools">ENTRA O REGISTRATI</h2>
+				<h5 class="md-toolbar-tools">REGISTRAZIONE</h2>
 			</md-toolbar>
-			<form name="loginform" novalidate ng-submit="login()" role="form" novalidate autocomplete="off">
+			<form name="registrazioneform" novalidate ng-submit="registrazione()" role="form" novalidate autocomplete="off">
 				<md-content class="md-padding" layout="column" layout-align="space-between stretch">
 					<md-input-container>
 						<label>Username</label>
-						<input ng-model="user.username" ng-required="true">
+						<input ng-model="nuovo.username" ng-required="true">
 						<div ng-messages="error">{{error}}</div>
 					</md-input-container>
 					<md-input-container>
 						<label>Password</label>
-						<input type="password" ng-model="user.password" ng-required="true">
+						<input type="password" ng-model="nuovo.password" ng-required="true">
 					</md-input-container>
-					<md-button ng-disabled="loginform.$invalid" layout-padding type="submit" aria-label="Login" class="md-raised md-primary">
-						Login </md-button>
-					<md-button ui-sref="registrazione" layout-padding type="submit" aria-label="Login" class="md-raised md-primary">
+					<md-button layout-padding type="submit" aria-label="Login" class="md-raised md-primary">
 						Registrati </md-button>
 				</md-content>
 			</form>
