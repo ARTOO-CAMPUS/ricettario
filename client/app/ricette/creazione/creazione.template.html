@@ -1,0 +1,42 @@
+<md-content layout="row" layout-nowrap>
+	<ng-include src="'app/UI/sidenav.template.html'"></ng-include>
+	<md-content layout="column" layout-wrap layout-fill layout-padding>
+		<form ng-submit="crea()" novalidate role="form" name="creaform">
+			<div layout="column" layout-wrap layout-align="center start" flex-offset="40">
+				<md-input-container>
+					<label>Titolo</label>
+					<input ng-model="nuovaRicetta.titolo">
+				</md-input-container>
+				<md-input-container>
+					<label>Categoria</label>
+					<input ng-model="nuovaRicetta.categoria">
+				</md-input-container>
+				<md-input-container>
+					<label>Difficoltà</label>
+					<input ng-model="nuovaRicetta.difficolta">
+				</md-input-container>
+				<md-input-container>
+					<label>Preparazione</label>
+					<input ng-model="nuovaRicetta.preparazione">
+				</md-input-container>
+				<md-input-container>
+					<label>Temperatura</label>
+					<input ng-model="nuovaRicetta.temperatura">
+				</md-input-container>
+				<md-input-container>
+					<label>Tempodicottura</label>
+					<input ng-model="nuovaRicetta.tempodicottura">
+				</md-input-container>
+				<md-input-container>
+					<label>Ingredienti</label>
+					<input ng-model="nuovaRicetta.ingredienti">
+				</md-input-container>
+				<md-input-container>
+					<label>Immagini</label>
+					<input ng-model="nuovaRicetta.immagini">
+				</md-input-container>
+				<md-button class="md-raised md-primary" type="submit">Crea</md-button>
+			</div>
+			<!--</form>-->
+	</md-content>
+</md-content>

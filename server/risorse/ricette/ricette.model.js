@@ -2,6 +2,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ricetteSchema = new Schema({
+	author: {
+		type: Schema.Types.ObjectId,
+		ref: 'Utenti'
+	},
 	titolo: {
 		type: String,
 		unique: true,

@@ -35,4 +35,12 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
 				aut: Aut
 			}
 		})
+		.state('creazione', {
+			url: '/creazione',
+			templateUrl: 'app/ricette/creazione/creazione.template.html',
+			controller: 'CreazioneCtrl',
+			resolve: {
+				aut: Aut
+			}
+		})
 });

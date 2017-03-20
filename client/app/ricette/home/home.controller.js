@@ -1,4 +1,4 @@
-angular.module('app').controller('HomeCtrl', function ($scope, $timeout, $mdSidenav, $log, RicetteSrv, $state) {
+angular.module('app').controller('HomeCtrl', function ($scope, $timeout, $mdSidenav, RicetteSrv, $state, UtentiSrv, $rootScope) {
 
 	RicetteSrv.getRicette()
 		.then(function (data) {
@@ -16,13 +16,24 @@ angular.module('app').controller('HomeCtrl', function ($scope, $timeout, $mdSide
 				}
 			});
 
-
-
 			console.log($scope.ricette);
 		})
 		.catch(function (err) {
 			console.log(err);
 		});
+
+	$scope.addRicetta = function (idricetta, $event) {
+		$event.stopPropagation();
+		console.log(idricetta, $event);
+		UtentiSrv.aggiungiRicettaPreferita($rootScope.utente._id, idricetta)
+			.then(function (data) {
+				console.log(data);
+			})
+			.catch(function (err) {
+				console.log(err);
+			})
+
+	}
 
 
 });
