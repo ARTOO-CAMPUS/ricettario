@@ -16,7 +16,7 @@ angular.module('app', [
 			.primaryPalette('pink')
 			.dark();
 
-	}).controller('AppCtrl', function ($rootScope, $scope, $state) {
+	}).controller('AppCtrl', function ($rootScope, $scope, $state, UtentiSrv) {
 		$scope.logout = function () {
 			$rootScope.utente = false;
 			localStorage.clear();
@@ -36,6 +36,20 @@ angular.module('app', [
 			$scope.opened = !$scope.opened;
 		};
 
+		$scope.removePreferito = function (id) {
+			UtentiSrv.eliminaRicettaPreferita($rootScope.utente._id, id)
+				.then(function (data) {
+					return UtentiSrv.dettaglioUtente($rootScope.utente._id);
 
-		$scope.preferite = ["Torta alle mele", "Torta alle arance"];
+				})
+				.then(function (data) {
+					$rootScope.utente = data;
+					localStorage.utente = angular.toJson($rootScope.utente);
+				})
+				.catch(function (err) {
+					console.log(err);
+				});
+
+		}
+
 	})
