@@ -14,7 +14,25 @@ angular.module('app').service('UtentiSrv', function ($location, $http) {
 				return err;
 			});
 	}
+	var aggiungiRicettaPreferita = function (id, ricettaid) {
+		return $http({
+				method: 'PUT',
+				url: baseUrl + '/utenti/ricetta/' + id,
+				data: {
+					"ricetta": ricettaid
+				}
+			})
+			.then(function (res) {
+				return res.data;
+			}, function (err) {
+				return err;
+			})
+			.catch(function (err) {
+				return err;
+			});
+	}
 	return {
-		getUtente: getUtente
+		getUtente: getUtente,
+		aggiungiRicettaPreferita: aggiungiRicettaPreferita
 	}
 })
