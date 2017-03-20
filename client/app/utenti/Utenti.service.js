@@ -31,6 +31,23 @@ angular.module('app').service('UtentiSrv', function ($location, $http) {
 				return err;
 			});
 	}
+	var eliminaRicettaPreferita = function (id, ricettaid) {
+		return $http({
+				method: 'PUT',
+				url: baseUrl + '/utenti/eliminaricetta/' + id,
+				data: {
+					"ricetta": ricettaid
+				}
+			})
+			.then(function (res) {
+				return res.data;
+			}, function (err) {
+				return err;
+			})
+			.catch(function (err) {
+				return err;
+			});
+	}
 
 	var dettaglioUtente = function (id) {
 		return $http({
@@ -49,6 +66,7 @@ angular.module('app').service('UtentiSrv', function ($location, $http) {
 	return {
 		getUtente: getUtente,
 		aggiungiRicettaPreferita: aggiungiRicettaPreferita,
+		eliminaRicettaPreferita: eliminaRicettaPreferita,
 		dettaglioUtente: dettaglioUtente
 	}
 })
