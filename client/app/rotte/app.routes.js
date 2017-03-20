@@ -51,4 +51,12 @@ angular.module('app').config(function ($stateProvider, $urlRouterProvider, $loca
 				aut: Aut
 			}
 		})
+		.state('profilo', {
+			url: '/profilo/:username',
+			templateUrl: 'app/utenti/profilo/profilo.template.html',
+			controller: 'ProfiloCtrl',
+			resolve: {
+				aut: Aut
+			}
+		})
 });
