@@ -16,10 +16,12 @@ angular.module('app', [
 			.primaryPalette('pink')
 			.dark();
 
-	}).controller('AppCtrl', function ($scope, $state) {
+	}).controller('AppCtrl', function ($rootScope, $scope, $state) {
 		$scope.logout = function () {
+			$rootScope.utente = false;
 			localStorage.clear();
 			$state.go('login');
+
 		}
 
 		// $scope.close = function () {
