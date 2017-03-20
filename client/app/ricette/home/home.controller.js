@@ -7,9 +7,9 @@ angular.module('app').controller('HomeCtrl', function ($scope, $timeout, $mdSide
 			$scope.ricette.forEach(function (el) {
 				if (el.voto.nvoti) {
 					el.media = el.voto.svoti / el.voto.nvoti;
-					el.m = [];
+					el.stelle = [];
 					for (var i = 0; i < Math.floor(el.media); i++) {
-						el.m.push(i);
+						el.stelle.push(i);
 					}
 				} else {
 					el.media = 1;
