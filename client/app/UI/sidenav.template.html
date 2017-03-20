@@ -3,11 +3,11 @@
 		<h1 class="md-toolbar-tools">RICETTE PREFERITE</h1>
 	</md-toolbar>
 	<md-content layout-padding>
-		<div layout="row" layout-align="start center" ng-repeat="p in preferite">
+		<div layout="row" layout-align="start center" ng-repeat="preferita in utente.ricettePreferite">
 			<md-button class="md-fab" aria-label="Eat cake">
 				<md-icon><i class="material-icons">cake</i></md-icon>
 			</md-button>
-			<h3>{{p}}</h3>
+			<h3>{{preferita.titolo}}</h3>
 		</div>
 	</md-content>
 </md-sidenav>

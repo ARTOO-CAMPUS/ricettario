@@ -62,6 +62,7 @@ module.exports = (function () {
 		Utenti.find({
 				"username": username
 			})
+			.populate('ricettePreferite')
 			.exec()
 			.then(function (data) {
 				res.status(200).json(data);

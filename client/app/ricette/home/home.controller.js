@@ -27,7 +27,12 @@ angular.module('app').controller('HomeCtrl', function ($scope, $timeout, $mdSide
 		console.log(idricetta, $event);
 		UtentiSrv.aggiungiRicettaPreferita($rootScope.utente._id, idricetta)
 			.then(function (data) {
-				console.log(data);
+				return UtentiSrv.dettaglioUtente($rootScope.utente._id);
+
+			})
+			.then(function (data) {
+				$rootScope.utente = data;
+				localStorage.utente = angular.toJson($rootScope.utente);
 			})
 			.catch(function (err) {
 				console.log(err);

@@ -31,8 +31,24 @@ angular.module('app').service('UtentiSrv', function ($location, $http) {
 				return err;
 			});
 	}
+
+	var dettaglioUtente = function (id) {
+		return $http({
+				method: 'GET',
+				url: baseUrl + '/utenti/' + id
+			})
+			.then(function (res) {
+				return res.data;
+			}, function (err) {
+				return err;
+			})
+			.catch(function (err) {
+				return err;
+			});
+	}
 	return {
 		getUtente: getUtente,
-		aggiungiRicettaPreferita: aggiungiRicettaPreferita
+		aggiungiRicettaPreferita: aggiungiRicettaPreferita,
+		dettaglioUtente: dettaglioUtente
 	}
 })
