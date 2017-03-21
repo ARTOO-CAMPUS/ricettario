@@ -1,1 +1,48 @@
-<h1>{{utente.username}}</h1>
+<!--<ng-include src="'app/UI/nav.template.html'"></ng-include>-->
+<md-content layout="row" layout-nowrap>
+	<ng-include src="'app/UI/sidenav.template.html'"></ng-include>
+
+	<md-content layout-fill>
+		<div layout="row" layout-align="center center">
+			<md-card>
+				<md-card-header>
+					<md-card-avatar>
+						<img class="md-user-avatar" ng-src="{{utente.avatar}}">
+					</md-card-avatar>
+					<md-card-header-text>
+						<span class="md-title">{{utente.username}}</span>
+						<span class="md-subhead">Artoo Cucina</span>
+					</md-card-header-text>
+				</md-card-header>
+				<img class="dettaglioimg" ng-src="{{utente.avatar}}" class="md-card-image" alt="Washed Out">
+				<md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">{{utente.username |uppercase}}</span>
+					</md-card-title-text>
+				</md-card-title>
+				<form ng-submit="aggiornaUtente()">
+					<md-card-content layout="column" layout-align="space-between stretch">
+						<md-input-container>
+							<label>Username</label>
+							<input ng-model="utente.username" type="text">
+						</md-input-container>
+						<md-input-container>
+							<label>Avatar</label>
+							<input ng-model="utente.avatar" type="text">
+						</md-input-container>
+
+					</md-card-content>
+					<md-button type="submit" class="md-raised md-accent">Aggiorna</md-button>
+				</form>
+				<div class="md-actions " layout="row " layout-align="end center ">
+					<md-button class="md-icon-button ">
+						<md-icon md-colors="{color: 'amber'}" ng-repeat="s in ricetta.stelle "><i class="material-icons ">star</i></md-icon>
+					</md-button>
+					<md-button ng-class="colora(ricetta._id)" ng-click="addRicetta(ricetta._id,$event); " class="md-icon-button ">
+						<md-icon><i class="material-icons ">favorite</i></md-icon>
+					</md-button>
+				</div>
+			</md-card>
+		</div>
+	</md-content>
+</md-content>
