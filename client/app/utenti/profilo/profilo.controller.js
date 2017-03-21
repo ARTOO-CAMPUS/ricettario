@@ -1,4 +1,4 @@
-angular.module('app').controller('ProfiloCtrl', function ($scope, $rootScope, UtentiSrv) {
+angular.module('app').controller('ProfiloCtrl', function ($scope, $rootScope, UtentiSrv, $mdToast) {
 	//$rootScope.utente;
 
 	$scope.errore = "";
@@ -32,6 +32,12 @@ angular.module('app').controller('ProfiloCtrl', function ($scope, $rootScope, Ut
 					localStorage.clear();
 					localStorage.utente = angular.toJson($rootScope.utente);
 					$scope.errore = "";
+					$mdToast.show(
+						$mdToast.simple()
+						.textContent('Utente Aggiornato con successo')
+						.position('bottom')
+						.hideDelay(5000)
+					);
 				}
 
 			}, function (err) {
