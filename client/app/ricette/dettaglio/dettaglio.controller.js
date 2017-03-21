@@ -1,4 +1,4 @@
-angular.module('app').controller('DettaglioCtrl', function ($scope, RicetteSrv, $state, $stateParams, $rootScope, UtentiSrv) {
+angular.module('app').controller('DettaglioCtrl', function ($scope, RicetteSrv, $state, $stateParams, $rootScope, UtentiSrv, $mdToast) {
 
 	RicetteSrv.dettaglioRicetta($stateParams.id)
 		.then(function (el) {
