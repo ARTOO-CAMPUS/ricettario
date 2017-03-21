@@ -7,6 +7,8 @@ router.get('/', Utenti.getUtenti);
 router.post('/', Utenti.creaUtente);
 //ROTTA DI DETTAGLIO UTENTE
 router.get('/:id([0-9a-f]{24})', Utenti.dettaglioUtente);
+//ROTTA DI MODIFICA UTENTE
+router.put('/:id([0-9a-f]{24})', Utenti.modificaUtente);
 //ROTTA DI RICERCA PER CATEGORIA
 router.get('/categoria', Utenti.ricercaUtentiPerCategoria);
 //ROTTA DI RICERCA PER USERNAME

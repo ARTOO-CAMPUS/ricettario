@@ -138,6 +138,17 @@ module.exports = (function () {
 			});
 	}
 
+	var modificaUtente = function (req, res) {
+		var id = req.params.id;
+		Utenti.findByIdAndUpdate(id, req.body)
+			.then(function (data) {
+				res.status(200).json(data);
+			})
+			.catch(function (err) {
+				res.status(500).json(err);
+			})
+	}
+
 	return {
 		getUtenti: getUtenti,
 		creaUtente: creaUtente,
@@ -147,6 +158,7 @@ module.exports = (function () {
 		aggiungiCategoria: aggiungiCategoria,
 		eliminaCategoria: eliminaCategoria,
 		aggiungiRicetta: aggiungiRicetta,
-		eliminaRicetta: eliminaRicetta
+		eliminaRicetta: eliminaRicetta,
+		modificaUtente: modificaUtente,
 	}
 })();
