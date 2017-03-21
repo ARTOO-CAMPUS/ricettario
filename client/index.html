@@ -2,31 +2,32 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<base href="/">
-	<title>Ricettario</title>
-	<link rel="stylesheet" href="nm/angular-material/angular-material.min.css">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="css/login.css" rel="stylesheet">
-	<link href="css/ricette.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <base href="/">
+    <title>Ricettario</title>
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <link rel="stylesheet" href="nm/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/login.css" rel="stylesheet">
+    <link href="css/ricette.css" rel="stylesheet">
 
 </head>
 
 <body ng-app="app" ng-controller="AppCtrl" layout="column">
-	<!--navbar-->
-	<div ng-show="utente" ng-include="'app/UI/nav.template.html'"></div>
-	<!--contenuto-->
-	<md-content flex layout="column">
-		<md-content ui-view layout-fill></md-content>
-	</md-content>
-	<!--fab aggiunta-->
-	<md-button ng-show="utente" class="md-fab md-fab-bottom-right" aria-label="add ricetta" ui-sref="creazione">
-		<md-tooltip md-direction="top" md-visible="tooltipVisible">Nuova ricetta</md-tooltip>
-		<md-icon><i class="material-icons">cake</i></md-icon>
-	</md-button>
+    <!--navbar-->
+    <div ng-show="utente" ng-include="'app/UI/nav.template.html'"></div>
+    <!--contenuto-->
+    <md-content flex layout="column">
+        <md-content ui-view layout-fill></md-content>
+    </md-content>
+    <!--fab aggiunta-->
+    <md-button ng-show="utente" class="md-fab md-fab-bottom-right" aria-label="add ricetta" ui-sref="creazione">
+        <md-tooltip md-direction="top" md-visible="tooltipVisible">Nuova ricetta</md-tooltip>
+        <md-icon><i class="material-icons">cake</i></md-icon>
+    </md-button>
 </body>
 
 
@@ -49,8 +50,8 @@
 <script src="app/utenti/registrazione/registrazione.controller.js"></script>
 
 <script>
-	document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
-		':35729/livereload.js?snipver=1"></' + 'script>')
+    document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] +
+        ':35729/livereload.js?snipver=1"></' + 'script>')
 </script>
 
 </html>

@@ -1,33 +1,33 @@
 <md-toolbar class="md-hue-2  myCustomClass" md-theme="docs-dark" layout-padding>
-	<div class="md-toolbar-tools" layout="row" layout-align="start center" layout-padding>
-		<md-button ng-click="toggle()" md-no-ink aria-label="Eat cake">
-			<md-icon><i class="material-icons">menu</i></md-icon>
-		</md-button>
-		<md-button ui-sref="home" md-no-ink aria-label="Eat cake">
-			<md-icon><i class="material-icons">home</i></md-icon>
-		</md-button>
-		<div flex="30"></div>
-		<form ng-submit="cerca()">
-			<div layout="row">
-				<md-input-container>
-					<md-icon><i class="material-icons">search</i></md-icon>
-					<input ng-model="$parent.ricerca" type="text" placeholder="Cerca ingrediente">
-				</md-input-container>
-				<!--<md-select ng-change="cerca()" ng-model="$parent.categoria" placeholder="Categoria" class="md-no-underline">
+    <div class="md-toolbar-tools" layout="row" layout-align="start center" layout-padding>
+        <md-button ng-click="toggle()" md-no-ink aria-label="Eat cake">
+            <md-icon><i class="material-icons">menu</i></md-icon>
+        </md-button>
+        <md-button ui-sref="home" md-no-ink aria-label="Eat cake">
+            <md-icon><i class="material-icons">home</i></md-icon>
+        </md-button>
+        <div flex="55"></div>
+        <form ng-submit="cerca()">
+            <div layout="row">
+                <md-input-container>
+                    <md-icon><i class="material-icons">search</i></md-icon>
+                    <input ng-model="$parent.ricerca" type="text" placeholder="Cerca ingrediente">
+                </md-input-container>
+                <!--<md-select ng-change="cerca()" ng-model="$parent.categoria" placeholder="Categoria" class="md-no-underline">
 					<md-option value="Dolce">Dolce</md-option>
 					<md-option value="Primo">Primo</md-option>
 					<md-option value="Secondo">Secondo</md-option>
 					<md-option value="Contorno">Contorno</md-option>
 				</md-select>-->
-				<md-button type="submit" ng-hide="true">a</md-button>
-			</div>
-		</form>
-		<div flex></div>
-		<md-button ng-click="logout()" md-no-ink aria-label="user">
-			logout
-		</md-button>
-		<md-button ui-sref="profilo({username:utente.username})" class="md-fab " md-no-ink aria-label="user">
-			<md-icon><i class="material-icons">person</i></md-icon>
-		</md-button>
-	</div>
+                <md-button type="submit" ng-hide="true">a</md-button>
+            </div>
+        </form>
+        <div flex></div>
+        <md-button ng-click="logout()" md-no-ink aria-label="user">
+            logout
+        </md-button>
+        <md-button ui-sref="profilo({username:utente.username})" class="md-fab " md-no-ink aria-label="user">
+            <md-icon><i class="material-icons">person</i></md-icon>
+        </md-button>
+    </div>
 </md-toolbar>
