@@ -3,7 +3,10 @@
 		<md-button ng-click="toggle()" md-no-ink aria-label="Eat cake">
 			<md-icon><i class="material-icons">menu</i></md-icon>
 		</md-button>
-		<span flex="5"></span>
+		<md-button ui-sref="home" md-no-ink aria-label="Eat cake">
+			<md-icon><i class="material-icons">home</i></md-icon>
+		</md-button>
+		<div flex="30"></div>
 		<form ng-submit="cerca()">
 			<div layout="row">
 				<md-input-container>
@@ -23,7 +26,7 @@
 		<md-button ng-click="logout()" md-no-ink aria-label="user">
 			logout
 		</md-button>
-		<md-button ui-sref="profilo({username:utente.username})"class="md-fab " md-no-ink aria-label="user">
+		<md-button ui-sref="profilo({username:utente.username})" class="md-fab " md-no-ink aria-label="user">
 			<md-icon><i class="material-icons">person</i></md-icon>
 		</md-button>
 	</div>
