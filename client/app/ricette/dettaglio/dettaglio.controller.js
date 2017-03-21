@@ -79,11 +79,35 @@ angular.module('app').controller('DettaglioCtrl', function ($scope, RicetteSrv, 
 			.ok('Okay!')
 			.cancel('Più tardi');
 
-		$mdDialog.show(confirm).then(function (result) {
-			console.log(result);
-		}, function (result) {
-			console.log(result);
-		});
+		$mdDialog.show(confirm)
+			.then(function (result) {
+				var data = {
+					"autore": $rootScope.utente._id,
+					"commento": result
+				}
+				return UtentiSrv.commentaRicetta($scope.ricetta._id, data);
+			}, function (result) {
+				console.log(result);
+			}).then(function (data) {
+				$scope.ricetta = data;
+				if ($scope.ricetta.voto.nvoti) {
+					$scope.ricetta.media = $scope.ricetta.voto.svoti / $scope.ricetta.voto.nvoti;
+					$scope.ricetta.stelle = [];
+					for (var i = 0; i < Math.floor($scope.ricetta.media); i++) {
+						$scope.ricetta.stelle.push(i);
+					}
+				} else {
+					$scope.ricetta.media = 1;
+				}
+				$mdToast.show(
+					$mdToast.simple()
+					.textContent('Ricetta commentata con successo')
+					.position('bottom')
+					.hideDelay(5000)
+				);
+			}).catch(function (err) {
+				console.log(err);
+			});
 	};
 
 })

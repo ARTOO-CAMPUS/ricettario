@@ -111,6 +111,21 @@ angular.module('app').service('UtentiSrv', function ($location, $http) {
 				return err.data;
 			});
 	}
+	var commentaRicetta = function (id, data) {
+		return $http({
+				method: 'PUT',
+				url: baseUrl + '/ricette/commento/' + id,
+				data: data
+			})
+			.then(function (res) {
+				return res.data;
+			}, function (err) {
+				return err.data;
+			})
+			.catch(function (err) {
+				return err.data;
+			});
+	}
 	return {
 		getUtente: getUtente,
 		aggiungiRicettaPreferita: aggiungiRicettaPreferita,
@@ -118,6 +133,7 @@ angular.module('app').service('UtentiSrv', function ($location, $http) {
 		dettaglioUtente: dettaglioUtente,
 		creaUtente: creaUtente,
 		aggiornaUtente: aggiornaUtente,
-		votaRicetta: votaRicetta
+		votaRicetta: votaRicetta,
+		commentaRicetta: commentaRicetta
 	}
 })
