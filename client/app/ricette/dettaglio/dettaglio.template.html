@@ -5,13 +5,22 @@
 	<md-content layout-fill>
 		<div layout="row" layout-align="center center">
 			<md-card>
+				<md-card-header>
+					<md-card-avatar>
+						<img class="md-user-avatar" ng-src="{{ricetta.author.avatar}}">
+					</md-card-avatar>
+					<md-card-header-text>
+						<span class="md-title">{{ricetta.author.username}}</span>
+						<span class="md-subhead">Artoo Cucina</span>
+					</md-card-header-text>
+				</md-card-header>
 				<img ng-src="{{ricetta.immagini[0]}}" class="md-card-image" alt="Washed Out">
 				<md-card-title>
 					<md-card-title-text>
 						<span class="md-headline">{{ricetta.titolo}}</span>
 					</md-card-title-text>
 				</md-card-title>
-				<md-card-content>
+				<md-card-content layout="column" layout-align="space-between stretch">
 					<div layout="row" layout-align="space-between">
 						<div>
 							<i class="material-icons">weekend</i>
@@ -26,6 +35,9 @@
 							<div flex="5"></div><span>{{ricetta.temperaturadicottura}}°</span>
 						</div>
 					</div>
+					<md-chips>
+						<md-chip ng-repeat="chip in ricetta.ingredienti">{{chip}}</md-chip>
+					</md-chips>
 					<h5>
 						{{ricetta.preparazione}}
 					</h5>

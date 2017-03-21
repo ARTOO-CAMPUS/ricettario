@@ -21,6 +21,7 @@ module.exports = (function () {
 		var id = req.params.id;
 		Ricette.findById(id)
 			.populate('commenti.autore')
+			.populate('author')
 			.exec()
 			.then(function (data) {
 				res.status(200).json(data);
