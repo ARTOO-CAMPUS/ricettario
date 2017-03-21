@@ -1,4 +1,4 @@
-angular.module('app').controller('DettaglioCtrl', function ($scope, RicetteSrv, $state, $stateParams, $rootScope, UtentiSrv, $mdToast) {
+angular.module('app').controller('DettaglioCtrl', function ($scope, RicetteSrv, $state, $stateParams, $rootScope, UtentiSrv, $mdToast, $mdDialog) {
 
 	RicetteSrv.dettaglioRicetta($stateParams.id)
 		.then(function (el) {
@@ -66,5 +66,24 @@ angular.module('app').controller('DettaglioCtrl', function ($scope, RicetteSrv, 
 			});
 
 	}
+
+	$scope.commenta = function (ev) {
+		// Appending dialog to document.body to cover sidenav in docs app
+		var confirm = $mdDialog.prompt()
+			.title('Commenta la ricetta')
+			.textContent('Lascia un commento')
+			.placeholder('Ricetta buonissima')
+			.ariaLabel('Ricetta buonissima')
+			.initialValue('Ricetta buonissima')
+			.targetEvent(ev)
+			.ok('Okay!')
+			.cancel('Più tardi');
+
+		$mdDialog.show(confirm).then(function (result) {
+			console.log(result);
+		}, function (result) {
+			console.log(result);
+		});
+	};
 
 })
