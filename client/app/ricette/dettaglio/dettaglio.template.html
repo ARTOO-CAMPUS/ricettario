@@ -17,7 +17,8 @@
 				<img class="dettaglioimg" ng-src="{{ricetta.immagini[0]}}" class="md-card-image" alt="Washed Out">
 				<md-card-title>
 					<md-card-title-text>
-						<span class="md-headline">{{ricetta.titolo}}</span>
+						<span class="md-headline">{{ricetta.titolo |uppercase}}</span>
+						<span class="md-subhead">{{ricetta.categoria}}</span>
 					</md-card-title-text>
 				</md-card-title>
 				<md-card-content layout="column" layout-align="space-between stretch">
