@@ -9,3 +9,7 @@
 	box-shadow: 5px 5px 20px 0px #979797 !important;
 	cursor: pointer;
 }
+
+.dettaglioimg {
+	width: 800px !important;
+}
