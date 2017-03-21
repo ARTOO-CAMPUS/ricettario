@@ -78,11 +78,28 @@ angular.module('app').service('UtentiSrv', function ($location, $http) {
 				return err;
 			});
 	}
+
+	var aggiornaUtente = function (id, data) {
+		return $http({
+				method: 'PUT',
+				url: baseUrl + '/utenti/' + id,
+				data: data
+			})
+			.then(function (res) {
+				return res.data;
+			}, function (err) {
+				return err.data;
+			})
+			.catch(function (err) {
+				return err.data;
+			});
+	}
 	return {
 		getUtente: getUtente,
 		aggiungiRicettaPreferita: aggiungiRicettaPreferita,
 		eliminaRicettaPreferita: eliminaRicettaPreferita,
 		dettaglioUtente: dettaglioUtente,
-		creaUtente: creaUtente
+		creaUtente: creaUtente,
+		aggiornaUtente: aggiornaUtente
 	}
 })
