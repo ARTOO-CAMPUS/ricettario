@@ -94,12 +94,30 @@ angular.module('app').service('UtentiSrv', function ($location, $http) {
 				return err.data;
 			});
 	}
+	var votaRicetta = function (id, voto) {
+		return $http({
+				method: 'PUT',
+				url: baseUrl + '/ricette/' + id,
+				data: {
+					"voto": voto + 1
+				}
+			})
+			.then(function (res) {
+				return res.data;
+			}, function (err) {
+				return err.data;
+			})
+			.catch(function (err) {
+				return err.data;
+			});
+	}
 	return {
 		getUtente: getUtente,
 		aggiungiRicettaPreferita: aggiungiRicettaPreferita,
 		eliminaRicettaPreferita: eliminaRicettaPreferita,
 		dettaglioUtente: dettaglioUtente,
 		creaUtente: creaUtente,
-		aggiornaUtente: aggiornaUtente
+		aggiornaUtente: aggiornaUtente,
+		votaRicetta: votaRicetta
 	}
 })
