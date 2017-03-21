@@ -12,29 +12,29 @@
             <img ng-click="cerca('Secondo')" src="http://blog.giallozafferano.it/lebistro/wp-content/uploads/2015/10/tacchino-1.jpg"
                 width="200px">
 
-            <img ng-click="cerca('Contorno')" src="http://www.ristoranteareanova.it/wp-content/uploads/2015/01/Insalatona_bavarese-635x325.jpg"
-                width="200px">
+            <img ng-click="cerca('Contorno')" src="http://www.dissapore.com/wp-content/uploads/2016/01/patate-arrosto-1300x867.jpg" width="200px ">
 
-            <img ng-click="cerca('Dolce')" src="http://www.palermoviva.it/wordpress/wp-content/uploads/2016/02/cannoli-1.jpg" width="200px">
+            <img ng-click="cerca( 'Dolce') " src="http://www.palermoviva.it/wordpress/wp-content/uploads/2016/02/cannoli-1.jpg
+                " width="200px ">
         </div>
         <!--carosello-->
-        <md-content layout="row">
-            <md-card flex flex-gt-md="30" ng-repeat="a in [2,4,5,6,7,8]" class="ricette">
-                <img src="http://static.pourfemme.it/pfricette/fotogallery/845X0/22905/torta-di-compleanno-alle-fragole.jpg" class="md-card-image"
-                    alt="Washed Out">
+        <md-content layout="row ">
+            <md-card flex flex-gt-md="30 " ng-repeat="a in [2,4,5,6,7,8] " class="ricette ">
+                <img src="http://static.pourfemme.it/pfricette/fotogallery/845X0/22905/torta-di-compleanno-alle-fragole.jpg
+                " class="md-card-image " alt="Washed Out ">
                 <md-card-content>
-                    <h2 class="md-title">Paracosm</h2>
+                    <h2 class="md-title ">Paracosm</h2>
                     <p>
                         The titles of Washed Out's breakthrough song and the first single from Paracosm share the two most important words in Ernest
                         Greene's musical language: feel it. It's a simple request, as well...
                     </p>
                 </md-card-content>
-                <div class="md-actions" layout="row" layout-align="end center">
+                <div class="md-actions " layout="row " layout-align="end center ">
                     <md-button>
-                        <md-icon md-colors="{color:'amber'}" ng-repeat="s in [1,2,3,4,5]"><i class="material-icons">star</i></md-icon>
+                        <md-icon md-colors="{color: 'amber'} " ng-repeat="s in [1,2,3,4,5] "><i class="material-icons ">star</i></md-icon>
                     </md-button>
                     <md-button>
-                        <md-icon class="md-warn"><i class="material-icons">favorite</i></md-icon>
+                        <md-icon class="md-warn "><i class="material-icons ">favorite</i></md-icon>
                     </md-button>
                 </div>
             </md-card>
@@ -42,21 +42,21 @@
         <!--fine carosello-->
 
         <!--inizio seconda sezione-->
-        <div layout="row" layout-wrap flex-offset="10" layout-align="start">
-            <md-card flex="20" ng-repeat="ricetta in ricette" class="ricette" ui-sref="dettaglio({id:ricetta._id})">
-                <img ng-src="{{ricetta.immagini[0]}}" class="md-card-image" alt="Washed Out">
+        <div layout="row " layout-wrap flex-offset="10 " layout-align="start ">
+            <md-card flex="20 " ng-repeat="ricetta in ricette " class="ricette " ui-sref="dettaglio({id:ricetta._id}) ">
+                <img ng-src="{{ricetta.immagini[0]}} " class="md-card-image " alt="Washed Out ">
                 <md-card-content>
-                    <h2 class="md-title">{{ricetta.titolo}}</h2>
+                    <h2 class="md-title ">{{ricetta.titolo}}</h2>
                     <p>
                         {{ricetta.preparazione}}
                     </p>
                 </md-card-content>
-                <div class="md-actions" layout="row" layout-align="end center">
-                    <md-button class="md-icon-button">
-                        <md-icon md-colors="{color:'amber'}" ng-repeat="s in ricetta.stelle"><i class="material-icons">star</i></md-icon>
+                <div class="md-actions " layout="row " layout-align="end center ">
+                    <md-button class="md-icon-button ">
+                        <md-icon md-colors="{color: 'amber'} " ng-repeat="s in ricetta.stelle "><i class="material-icons ">star</i></md-icon>
                     </md-button>
-                    <md-button ng-class="colora(ricetta._id)" ng-click="addRicetta(ricetta._id,$event);" class="md-icon-button">
-                        <md-icon><i class="material-icons">favorite</i></md-icon>
+                    <md-button ng-class="colora(ricetta._id) " ng-click="addRicetta(ricetta._id,$event); " class="md-icon-button ">
+                        <md-icon><i class="material-icons ">favorite</i></md-icon>
                     </md-button>
                 </div>
             </md-card>
