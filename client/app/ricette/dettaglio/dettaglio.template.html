@@ -1,3 +1,45 @@
-<h1>
-	{{ricetta.titolo}}
-</h1>
+<!--<ng-include src="'app/UI/nav.template.html'"></ng-include>-->
+<md-content layout="row" layout-nowrap>
+	<ng-include src="'app/UI/sidenav.template.html'"></ng-include>
+
+	<md-content>
+		<div layout="row" flex="100">
+			<md-card>
+				<img ng-src="{{ricetta.immagini[0]}}" class="md-card-image" alt="Washed Out">
+				<md-card-title>
+					<md-card-title-text>
+						<span class="md-headline">{{ricetta.titolo}}</span>
+					</md-card-title-text>
+				</md-card-title>
+				<md-card-content>
+					<div layout="row" layout-align="space-between">
+						<div>
+							<i class="material-icons">weekend</i>
+							<div flex="5"></div><span>{{ricetta.difficolta}}</span>
+						</div>
+						<div>
+							<i class="material-icons">timer</i>
+							<div flex="5"></div><span>{{ricetta.tempodicottura}} min</span>
+						</div>
+						<div>
+							<i class="material-icons">restaurant</i>
+							<div flex="5"></div><span>{{ricetta.temperaturadicottura}}°</span>
+						</div>
+					</div>
+					<h5>
+						{{ricetta.preparazione}}
+					</h5>
+
+				</md-card-content>
+				<div class="md-actions " layout="row " layout-align="end center ">
+					<md-button class="md-icon-button ">
+						<md-icon md-colors="{color: 'amber'}" ng-repeat="s in ricetta.stelle "><i class="material-icons ">star</i></md-icon>
+					</md-button>
+					<md-button ng-class="colora(ricetta._id)" ng-click="addRicetta(ricetta._id,$event); " class="md-icon-button ">
+						<md-icon><i class="material-icons ">favorite</i></md-icon>
+					</md-button>
+				</div>
+			</md-card>
+		</div>
+	</md-content>
+</md-content>
