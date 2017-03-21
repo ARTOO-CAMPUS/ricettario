@@ -1,15 +1,20 @@
 .ricette {
-	min-width: 400px !important;
+    min-width: 400px !important;
 }
 
 .categorie img {
-	border-radius: 50% !important;
-	width: 200px !important;
-	height: 200px !important;
-	box-shadow: 5px 5px 20px 0px #979797 !important;
-	cursor: pointer;
+    border-radius: 50% !important;
+    width: 200px !important;
+    height: 200px !important;
+    box-shadow: 5px 5px 20px 0px #979797 !important;
+    cursor: pointer;
 }
 
 .dettaglioimg {
-	width: 800px !important;
+    width: 800px !important;
+}
+
+#logo {
+    font-family: 'Pacifico', cursive;
+    cursor: pointer;
 }

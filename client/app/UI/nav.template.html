@@ -3,10 +3,13 @@
         <md-button ng-click="toggle()" md-no-ink aria-label="Eat cake">
             <md-icon><i class="material-icons">menu</i></md-icon>
         </md-button>
-        <md-button ui-sref="home" md-no-ink aria-label="Eat cake">
-            <md-icon><i class="material-icons">home</i></md-icon>
-        </md-button>
-        <div flex="55"></div>
+        <h1 flex-offset="10" flex="30" id="logo" ui-sref="home" md-no-ink aria-label="Eat cake">
+            Ricette del Mondo
+        </h1>
+        <!--<div flex>
+            <h2>Ricette del Mondo</h2>
+        </div>-->
+        <div flex="20"></div>
         <form ng-submit="cerca()">
             <div layout="row">
                 <md-input-container>
