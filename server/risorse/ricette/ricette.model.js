@@ -48,9 +48,12 @@ var ricetteSchema = new Schema({
 	voto: {
 		nvoti: {
 			type: Number,
+			default: 1,
 		},
 		svoti: {
 			type: Number,
+			default: 1,
+
 		}
 	},
 	commenti: [{

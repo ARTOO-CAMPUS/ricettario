@@ -1,9 +1,18 @@
-angular.module('app').controller('DettaglioCtrl', function ($scope, RicetteSrv, $state, $stateParams, $rootScope, UtentiSrv) {
+angular.module('app').controller('DettaglioCtrl', function ($scope, RicetteSrv, $state, $stateParams, $rootScope, UtentiSrv, $mdToast, $mdDialog) {
 
 	RicetteSrv.dettaglioRicetta($stateParams.id)
-		.then(function (data) {
-			$scope.ricetta = data;
-			console.log(data);
+		.then(function (el) {
+			$scope.ricetta = el;
+			if ($scope.ricetta.voto.nvoti) {
+				$scope.ricetta.media = $scope.ricetta.voto.svoti / $scope.ricetta.voto.nvoti;
+				$scope.ricetta.stelle = [];
+				for (var i = 0; i < Math.floor($scope.ricetta.media); i++) {
+					$scope.ricetta.stelle.push(i);
+				}
+			} else {
+				$scope.ricetta.media = 1;
+			}
+			console.log(el);
 		});
 	$scope.addRicetta = function (idricetta, $event) {
 		$event.stopPropagation();
@@ -31,5 +40,50 @@ angular.module('app').controller('DettaglioCtrl', function ($scope, RicetteSrv, 
 			return 'md-warn'
 		}
 	}
+
+	$scope.vota = function (voto, id) {
+		UtentiSrv.votaRicetta(id, voto)
+			.then(function (data) {
+				$scope.ricetta = data;
+				if ($scope.ricetta.voto.nvoti) {
+					$scope.ricetta.media = $scope.ricetta.voto.svoti / $scope.ricetta.voto.nvoti;
+					$scope.ricetta.stelle = [];
+					for (var i = 0; i < Math.floor($scope.ricetta.media); i++) {
+						$scope.ricetta.stelle.push(i);
+					}
+				} else {
+					$scope.ricetta.media = 1;
+				}
+				$mdToast.show(
+					$mdToast.simple()
+					.textContent('Ricetta votata')
+					.position('bottom')
+					.hideDelay(5000)
+				);
+
+			}).catch(function (err) {
+				console.log(err);
+			});
+
+	}
+
+	$scope.commenta = function (ev) {
+		// Appending dialog to document.body to cover sidenav in docs app
+		var confirm = $mdDialog.prompt()
+			.title('Commenta la ricetta')
+			.textContent('Lascia un commento')
+			.placeholder('Ricetta buonissima')
+			.ariaLabel('Ricetta buonissima')
+			.initialValue('Ricetta buonissima')
+			.targetEvent(ev)
+			.ok('Okay!')
+			.cancel('Più tardi');
+
+		$mdDialog.show(confirm).then(function (result) {
+			console.log(result);
+		}, function (result) {
+			console.log(result);
+		});
+	};
 
 })

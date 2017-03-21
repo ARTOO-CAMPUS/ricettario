@@ -15,6 +15,16 @@
 					</md-card-header-text>
 				</md-card-header>
 				<img class="dettaglioimg" ng-src="{{ricetta.immagini[0]}}" class="md-card-image" alt="Washed Out">
+				<div class="md-actions " layout="row " layout-align="space-between end">
+					<div class="md-actions " layout="row " layout-align="start start">
+						<md-button class="md-icon-button" ng-repeat="s in ricetta.stelle">
+							<md-icon md-colors="{color: 'amber'}"><i class="material-icons ">star</i></md-icon>
+						</md-button>
+					</div>
+					<md-button ng-class="colora(ricetta._id)" ng-click="addRicetta(ricetta._id,$event); " class="md-icon-button ">
+						<md-icon><i class="material-icons ">favorite</i></md-icon>
+					</md-button>
+				</div>
 				<md-card-title>
 					<md-card-title-text>
 						<span class="md-headline">{{ricetta.titolo |uppercase}}</span>
@@ -44,12 +54,15 @@
 					</h5>
 
 				</md-card-content>
-				<div class="md-actions " layout="row " layout-align="end center ">
-					<md-button class="md-icon-button ">
-						<md-icon md-colors="{color: 'amber'}" ng-repeat="s in ricetta.stelle "><i class="material-icons ">star</i></md-icon>
-					</md-button>
-					<md-button ng-class="colora(ricetta._id)" ng-click="addRicetta(ricetta._id,$event); " class="md-icon-button ">
-						<md-icon><i class="material-icons ">favorite</i></md-icon>
+
+				<div class="md-actions " layout="row " layout-align="space-between end">
+					<div class="md-actions " layout="row " layout-align="start start">
+						<md-button ng-click="vota($index,ricetta._id)" class="md-icon-button" ng-repeat="st in [1,2,3,4,5]">
+							<md-icon><i class="material-icons ">star</i></md-icon>
+						</md-button>
+					</div>
+					<md-button ng-click="commenta($event,ricetta._id)" class="md-raised md-primary">
+						Commenta
 					</md-button>
 				</div>
 			</md-card>
