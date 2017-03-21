@@ -17,4 +17,9 @@
 #logo {
     font-family: 'Pacifico', cursive;
     cursor: pointer;
+    width: 800px !important;
+}
+
+.dettaglioimgavatar {
+    width: 500px !important;
 }
