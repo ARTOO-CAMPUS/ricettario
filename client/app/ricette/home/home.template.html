@@ -46,7 +46,7 @@
                     <md-button class="md-icon-button">
                         <md-icon md-colors="{color:'amber'}" ng-repeat="s in ricetta.stelle"><i class="material-icons">star</i></md-icon>
                     </md-button>
-                    <md-button ng-click="addRicetta(ricetta._id,$event);" class="md-icon-button">
+                    <md-button ng-class="colora(ricetta._id)" ng-click="addRicetta(ricetta._id,$event);" class="md-icon-button">
                         <md-icon><i class="material-icons">favorite</i></md-icon>
                     </md-button>
                 </div>

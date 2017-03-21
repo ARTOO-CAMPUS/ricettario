@@ -40,5 +40,15 @@ angular.module('app').controller('HomeCtrl', function ($scope, $timeout, $mdSide
 
 	}
 
+	$scope.colora = function (id) {
+		var preferita = $rootScope.utente.ricettePreferite.find(function (el) {
+			return el._id == id;
+		})
+		if (preferita) {
+			return 'md-warn'
+		}
+	}
+
+
 
 });
