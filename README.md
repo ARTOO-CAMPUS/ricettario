@@ -2,6 +2,7 @@
 ####Ricettario server-side
 ####Routing principale di Ricette e Utenti
 ####Aggiunta la collection postman
+####Finito Client e fatto il merge
 
 ##Istruzioni:
 
